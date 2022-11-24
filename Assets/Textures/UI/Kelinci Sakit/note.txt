@@ -1,0 +1,1 @@
+jika 3 hari game tidak dibuka maka akan muncul dialog kelinci sakit

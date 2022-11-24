@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0298c53b40ed99740b8996e74622427d, type: 3}
+  m_Name: 6 Meja Tanaman
+  m_EditorClassIdentifier: 
+  DisplayName: Meja Tanaman
+  Image: {fileID: 21300000, guid: b24b688ea2941c348aa1edb46c39ee9e, type: 3}
+  PrePurchase: {fileID: 21300000, guid: cf23e99505062c24a9a8fb3065c4f6a2, type: 3}
+  PostPurchase:
+  - {fileID: 21300000, guid: ef80e23370c86ab4e9d56cb155389dd2, type: 3}
+  ResourceDependance: {fileID: 0}
+  ResourceAddValue: 0
+  Desc: Beberapa tanaman beracun bagi kelinci, jadi tanaman hias sebaiknya dijauhkan
+    dari jangkauan kelinci.
+  DescObjects:
+  - {fileID: 5878595140390693264, guid: fc655c09732b3d547a25f63c99e2885b, type: 3}
+  ID: b84f261e-27e4-4e54-bb6e-22549431c46e

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0298c53b40ed99740b8996e74622427d, type: 3}
+  m_Name: 7 Papan
+  m_EditorClassIdentifier: 
+  DisplayName: Papan
+  Image: {fileID: 21300000, guid: 1c3b220cba8432747b4774c098ae2165, type: 3}
+  PrePurchase: {fileID: 21300000, guid: 55d57b77e2b0aa54caac47e424d56020, type: 3}
+  PostPurchase:
+  - {fileID: 21300000, guid: 4dff980a36b3df14d8d73d6a94f206fb, type: 3}
+  ResourceDependance: {fileID: 0}
+  ResourceAddValue: 0
+  Desc: Kardus, papan kayu, atau sekat besi dapat digunakan untuk melindungki kaki
+    perabotan dari gigitan kelinci.
+  DescObjects:
+  - {fileID: 5878595140390693264, guid: fc655c09732b3d547a25f63c99e2885b, type: 3}
+  ID: 85bfd41e-75dc-4466-8406-018703a7d2b3

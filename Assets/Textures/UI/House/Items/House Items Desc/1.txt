@@ -1,0 +1,1 @@
+Pagar untuk membatasi ruang gerak kelinci ke ruangan yang tidak ingin dimasuki oleh kelinci.

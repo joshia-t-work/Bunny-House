@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0298c53b40ed99740b8996e74622427d, type: 3}
+  m_Name: 4 Mangkuk Air
+  m_EditorClassIdentifier: 
+  DisplayName: Mangkuk Air
+  Image: {fileID: 21300000, guid: 48b7770287873a344bbc8b32d3aeab7e, type: 3}
+  PrePurchase: {fileID: 0}
+  PostPurchase:
+  - {fileID: 21300000, guid: 6cd0aeb126bc4594ead3886c19a3af1b, type: 3}
+  - {fileID: 21300000, guid: 67be64541e3ec0b439218815517e6bbe, type: 3}
+  - {fileID: 21300000, guid: b7e400121b6b14e4c932b263b115f5bf, type: 3}
+  ResourceDependance: {fileID: 11400000, guid: aa80df3d92953fb41945767154448095, type: 2}
+  ResourceAddValue: 0
+  Desc: Jumlah air yang diminum oleh kelinci adalah 50-150 ml per kilo dari berat
+    badan kelinci.
+  DescObjects:
+  - {fileID: 5878595140390693264, guid: fc655c09732b3d547a25f63c99e2885b, type: 3}
+  - {fileID: 6498395509725407920, guid: 6f29cdfe47cd35c4db7139150255bfdb, type: 3}
+  ID: 34b5cf12-6517-4c7b-87c1-82eab32724c0

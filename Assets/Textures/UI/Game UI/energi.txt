@@ -1,0 +1,3 @@
+energi maksimal :60
+energi recharge per 2 menit
+sekali main habis 10 energi
