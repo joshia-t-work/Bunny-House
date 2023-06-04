@@ -9,11 +9,14 @@ using UnityEngine.UI;
 
 namespace BunnyHouse.UI
 {
+    /// <summary>
+    /// Represents an image and a text for descriptions
+    /// </summary>
     public class UIGenericDesc : MonoBehaviour
     {
         [SerializeField] Image Image;
         [SerializeField] TMP_Text Text;
-        public void SetData(HouseItem item)
+        public void SetData(HouseItem.DescriptiveObject item)
         {
             Image.sprite = item.Image;
             Text.text = item.Desc;

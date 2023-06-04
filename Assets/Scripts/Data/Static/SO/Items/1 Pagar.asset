@@ -19,8 +19,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bc88b2c3633c09f4287d30431e83eece, type: 3}
   ResourceDependance: {fileID: 0}
   ResourceAddValue: 0
-  Desc: Pagar untuk membatasi ruang gerak kelinci ke ruangan yang tidak ingin dimasuki
-    oleh kelinci.
-  DescObjects:
-  - {fileID: 5878595140390693264, guid: fc655c09732b3d547a25f63c99e2885b, type: 3}
+  Generic: {fileID: 5878595140390693264, guid: f24e999ec35475b498b8b46d2ae456d8, type: 3}
+  Objects:
+  - Object: {fileID: 0}
+    Desc: Pagar untuk membatasi ruang gerak kelinci ke ruangan yang tidak ingin dimasuki
+      oleh kelinci.
+    Image: {fileID: 21300000, guid: 2bd8d83e05fe48847a8d268649de0a01, type: 3}
   ID: 681954ac-49e0-4ab3-9f76-ce94a2d90f23

@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace BunnyHouse.Data
 {
+    /// <summary>
+    /// Represents game-related data
+    /// </summary>
     [Serializable]
     public class GameData : IData
     {
@@ -19,24 +22,28 @@ namespace BunnyHouse.Data
         [SerializeField]
         private TutorialData tutorial;
 
-        public int LastTicksOpen { get { return lastTicksOpen; } }
+        /// <summary>
+        /// Represents time since last save was opened for time-spent outside game in ticks
+        /// </summary>
+        public long LastTicksOpen { get { return lastTicksOpen; } }
         [SerializeField]
-        private int lastTicksOpen = 0;
-
+        private long lastTicksOpen = 0;
+        
         public GameData()
         {
-            DateTime dateTime = DateTime.Now;
-            lastTicksOpen = (int)dateTime.Ticks;
+            lastTicksOpen = DateTime.Now.Ticks;
 
             player = new PlayerData();
             bunny = new BunnyData();
             tutorial = new TutorialData();
         }
 
+        /// <summary>
+        /// Performs operations during saving or mouse off-screen or app paused
+        /// </summary>
         public void OnPause()
         {
-            DateTime dateTime = DateTime.Now;
-            lastTicksOpen = (int)dateTime.Ticks;
+            lastTicksOpen = DateTime.Now.Ticks;
             player.OnPause();
             bunny.OnPause();
             tutorial.OnPause();

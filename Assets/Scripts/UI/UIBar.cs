@@ -10,10 +10,11 @@ using UnityEngine.UI;
 
 namespace BunnyHouse.UI
 {
+    /// <summary>
+    /// Updates a slider based on a resource
+    /// </summary>
     public class UIBar : MonoBehaviour
     {
-        [SerializeField]
-        private TMP_Text label;
         [SerializeField]
         private Slider slider;
         [SerializeField]
@@ -29,12 +30,8 @@ namespace BunnyHouse.UI
                     resource.Set(resource.MaxValue);
                     res = resource.MaxValue;
                 }
-                label.text = $"{res}/{resource.MaxValue}";
                 slider.value = res;
                 slider.maxValue = resource.MaxValue;
-            } else
-            {
-                label.text = $"{resource.Get()}";
             }
         }
     }

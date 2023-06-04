@@ -19,9 +19,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7c961551801e3e34a999984cecee7bbc, type: 3}
   ResourceDependance: {fileID: 0}
   ResourceAddValue: 0
-  Desc: Meletakkan terminal listrik di tempat yang sulit dijangkau kelinci, dan melindungi
-    kabel denga pelindung kabel, selang, atau pipa untuk mencegah kelinci menggigit
-    kabel.
-  DescObjects:
-  - {fileID: 5878595140390693264, guid: fc655c09732b3d547a25f63c99e2885b, type: 3}
+  Generic: {fileID: 5878595140390693264, guid: f24e999ec35475b498b8b46d2ae456d8, type: 3}
+  Objects:
+  - Object: {fileID: 0}
+    Desc: Meletakkan terminal listrik di tempat yang sulit dijangkau kelinci, dan
+      melindungi kabel dengan pelindung kabel, selang, atau pipa untuk mencegah kelinci
+      menggigit kabel.
+    Image: {fileID: 21300000, guid: 753df6b30c74aec47a879299572db504, type: 3}
   ID: 3ec42906-b7ab-4084-ac78-0c2ebf0c1165

@@ -21,10 +21,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d362f525c9d32ed458eb171c6abffcab, type: 3}
   ResourceDependance: {fileID: 11400000, guid: 664a7d92623cfce4eb12c9a34c1a67d4, type: 2}
   ResourceAddValue: 0
-  Desc: Makanan pokok bagi kelinci adalah hay atau rumput kering, kelinci setidaknya
-    makan hay sebanyak 80-95% sisanya adalah makanan pelengkap seperti pellet dan
-    sayur.
-  DescObjects:
-  - {fileID: 8462831777114851185, guid: bb38d9264e6ba8944b5488950c9455a7, type: 3}
-  - {fileID: 1177527146915070217, guid: 3311db2f41c548e438bdc8839f7b62b0, type: 3}
+  Generic: {fileID: 5878595140390693264, guid: fc655c09732b3d547a25f63c99e2885b, type: 3}
+  Objects:
+  - Object: {fileID: 8462831777114851185, guid: bb38d9264e6ba8944b5488950c9455a7, type: 3}
+    Desc: 
+    Image: {fileID: 0}
+  - Object: {fileID: 1177527146915070217, guid: 3311db2f41c548e438bdc8839f7b62b0, type: 3}
+    Desc: 
+    Image: {fileID: 0}
   ID: be91ecc6-b274-4c4f-9a9e-ca3d084e5c1b

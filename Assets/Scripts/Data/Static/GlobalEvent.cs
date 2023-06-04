@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace BunnyHouse.Data.Events
 {
+    /// <summary>
+    /// SO for listening and invoking calls
+    /// </summary>
     [CreateAssetMenu(fileName = "Global Event", menuName = "SO/Global Event")]
     public class GlobalEvent : ScriptableObject
     {
@@ -17,7 +20,8 @@ namespace BunnyHouse.Data.Events
         }
         public void Invoke()
         {
-            foreach (System.Action action in actions)
+            List<System.Action> tempActions = new List<System.Action>(actions);
+            foreach (System.Action action in tempActions)
             {
                 action();
             }

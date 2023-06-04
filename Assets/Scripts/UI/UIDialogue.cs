@@ -14,6 +14,9 @@ namespace BunnyHouse.UI
         [SerializeField] TMP_Text Name;
         [SerializeField] TMP_Text Text;
         private TaskCompletionSource<bool> NextClicked = new TaskCompletionSource<bool>();
+        /// <summary>
+        /// Runs a dialogue and waits for dialogue to finish and close up
+        /// </summary>
         public async Task RunDialogue(DialogueScene Scene)
         {
             TaskSystem.Main.Run(() => gameObject.SetActive(true));
@@ -29,6 +32,8 @@ namespace BunnyHouse.UI
             }
             TaskSystem.Main.Run(() => gameObject.SetActive(false));
         }
+
+        /// <remarks>For UI calls</remarks>
         public void Next()
         {
             NextClicked.TrySetResult(true);

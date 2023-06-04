@@ -664,50 +664,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659764751}
   m_CullTransparentMesh: 1
---- !u!1 &1778101626
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1778101628}
-  - component: {fileID: 1778101627}
-  m_Layer: 0
-  m_Name: SingletonRefer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1778101627
+--- !u!114 &1778101627 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8112814676113493579, guid: f089681ba3540ab4e94ac4b5dffc150a, type: 3}
+  m_PrefabInstance: {fileID: 8112814674659615536}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778101626}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a15c0aeda9376a44966dff00fe4a86b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1778101628
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778101626}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.291579, y: -0.24586277, z: 85.2902}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1950298514
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,6 +895,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1778101627}
+        m_TargetAssemblyTypeName: BunnyHouse.UI.SingletonReference, Core
+        m_MethodName: PlaySound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 5926e2e6819d167468b3961c3dee1286, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1778101627}
         m_TargetAssemblyTypeName: BunnyHouse.UI.UIChangeScene, Core
         m_MethodName: ChangeScene
         m_Mode: 5
@@ -977,3 +956,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076073587}
   m_CullTransparentMesh: 1
+--- !u!1001 &8112814674659615536
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8112814676113493578, guid: f089681ba3540ab4e94ac4b5dffc150a, type: 3}
+      propertyPath: m_Name
+      value: SingletonRefer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112814676113493580, guid: f089681ba3540ab4e94ac4b5dffc150a, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112814676113493580, guid: f089681ba3540ab4e94ac4b5dffc150a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.291579
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112814676113493580, guid: f089681ba3540ab4e94ac4b5dffc150a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.24586277
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112814676113493580, guid: f089681ba3540ab4e94ac4b5dffc150a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 85.2902
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112814676113493580, guid: f089681ba3540ab4e94ac4b5dffc150a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112814676113493580, guid: f089681ba3540ab4e94ac4b5dffc150a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112814676113493580, guid: f089681ba3540ab4e94ac4b5dffc150a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112814676113493580, guid: f089681ba3540ab4e94ac4b5dffc150a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112814676113493580, guid: f089681ba3540ab4e94ac4b5dffc150a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112814676113493580, guid: f089681ba3540ab4e94ac4b5dffc150a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112814676113493580, guid: f089681ba3540ab4e94ac4b5dffc150a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f089681ba3540ab4e94ac4b5dffc150a, type: 3}

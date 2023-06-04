@@ -9,6 +9,9 @@ using UnityEngine.UI;
 
 namespace BunnyHouse.UI
 {
+    /// <summary>
+    /// Represents a Tugas UI item
+    /// </summary>
     public class UITugasItem : MonoBehaviour
     {
         [SerializeField]
@@ -16,8 +19,11 @@ namespace BunnyHouse.UI
         [SerializeField]
         TMP_Text Text;
         [SerializeField]
-        GlobalEvent PurchaseEvent;
+        GlobalEventSO PurchaseEvent;
         HouseItem Item;
+
+        [SerializeField]
+        GameObject[] Tutorials;
 
         public void SetData(HouseItem item)
         {
@@ -26,6 +32,18 @@ namespace BunnyHouse.UI
             Text.text = item.DisplayName;
         }
 
+        /// <summary>
+        /// Darkens everything except buy button
+        /// </summary>
+        public void SetTutorial()
+        {
+            for (int i = 0; i < Tutorials.Length; i++)
+            {
+                Tutorials[i].SetActive(true);
+            }
+        }
+
+        /// <remarks>For UI calls</remarks>
         public void Buy()
         {
             if (DataSystem.GameData.Player.GetResource("Heart") >= 1)
@@ -33,7 +51,7 @@ namespace BunnyHouse.UI
                 DataSystem.GameData.Player.AddResource("Heart",-1);
                 DataSystem.GameData.Player.UpgradeItem(Item.ID);
                 DataSystem.SaveGame();
-                PurchaseEvent.Invoke();
+                PurchaseEvent.Invoke(Item);
                 gameObject.SetActive(false);
             }
         }

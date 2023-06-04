@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace BunnyHouse.Data
 {
+    /// <summary>
+    /// Represents bunny-related data
+    /// </summary>
     [Serializable]
     public class BunnyData : IData
     {

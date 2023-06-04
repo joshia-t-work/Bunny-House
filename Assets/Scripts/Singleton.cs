@@ -8,11 +8,21 @@ namespace BunnyHouse.Core
 {
     public class Singleton : MonoBehaviour
     {
-        public static bool isUIOverride;
+        /// <summary>
+        /// Checks if there is an object under mouse
+        /// </summary>
+        public static bool isUIOverride()
+        {
+            var view = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+            var isOutside = view.x < 0 || view.x > 1 || view.y < 0 || view.y > 1;
+            bool isOverride = EventSystem.current.IsPointerOverGameObject(-1) || (isOutside);
+            for (int i = 0; i < Input.touchCount; i++)
+            {
+                isOverride = isOverride || EventSystem.current.IsPointerOverGameObject(i);
+            }
+            return isOverride;
+        }
         public static Singleton Instance;
-        static TaskSystem TaskSystem;
-        static SceneSystem SceneSystem;
-        static DataSystem DataSystem;
         List<MonoSingleton> monoSingletons = new List<MonoSingleton>();
 
         private void Awake()
@@ -20,12 +30,7 @@ namespace BunnyHouse.Core
             if (Instance == null)
             {
                 Instance = this;
-                TaskSystem = GetComponent<TaskSystem>();
-                monoSingletons.Add(TaskSystem);
-                SceneSystem = GetComponent<SceneSystem>();
-                monoSingletons.Add(SceneSystem);
-                DataSystem = GetComponent<DataSystem>();
-                monoSingletons.Add(DataSystem);
+                monoSingletons = new List<MonoSingleton>(GetComponents<MonoSingleton>());
             }
             else
             {
@@ -42,9 +47,6 @@ namespace BunnyHouse.Core
             {
                 monoSingletons[i].MonoUpdate();
             }
-            var view = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-            var isOutside = view.x < 0 || view.x > 1 || view.y < 0 || view.y > 1;
-            isUIOverride = EventSystem.current.IsPointerOverGameObject() || (isOutside);
         }
 
         void OnApplicationFocus(bool hasFocus)

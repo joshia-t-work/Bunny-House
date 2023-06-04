@@ -19,8 +19,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4dff980a36b3df14d8d73d6a94f206fb, type: 3}
   ResourceDependance: {fileID: 0}
   ResourceAddValue: 0
-  Desc: Kardus, papan kayu, atau sekat besi dapat digunakan untuk melindungki kaki
-    perabotan dari gigitan kelinci.
-  DescObjects:
-  - {fileID: 5878595140390693264, guid: fc655c09732b3d547a25f63c99e2885b, type: 3}
+  Generic: {fileID: 5878595140390693264, guid: f24e999ec35475b498b8b46d2ae456d8, type: 3}
+  Objects:
+  - Object: {fileID: 0}
+    Desc: Kardus, papan kayu, atau sekat besi dapat digunakan untuk melindungi kaki
+      perabotan dari gigitan kelinci
+    Image: {fileID: 21300000, guid: b55aea1e7334eb146a3ac7e5940afb19, type: 3}
   ID: 85bfd41e-75dc-4466-8406-018703a7d2b3

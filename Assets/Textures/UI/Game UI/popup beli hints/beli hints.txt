@@ -1,0 +1,2 @@
+1 hints harganya 300 koin
+harga di pop up berubah sesuai dengan jumlah yg dibeli

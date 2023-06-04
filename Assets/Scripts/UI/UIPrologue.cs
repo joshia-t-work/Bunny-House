@@ -13,6 +13,9 @@ namespace BunnyHouse.UI
     {
         [SerializeField] Image Image;
         [SerializeField] TMP_Text Text;
+        /// <summary>
+        /// Runs the prologue with 5 second intervals, returns on finish with scene
+        /// </summary>
         public async Task RunPrologue(DialogueScene Scene)
         {
             TaskSystem.Main.Run(() => gameObject.SetActive(true));

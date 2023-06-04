@@ -1,20 +1,18 @@
 using BunnyHouse.Core;
 using BunnyHouse.Data.Events;
 using BunnyHouse.Data.Scene;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace BunnyHouse.UI
 {
+    /// <summary>
+    /// Represents a physical item in the house, clickable by the player
+    /// </summary>
     public class UIHouseItem : MonoBehaviour
     {
         [SerializeField] HouseItem Item;
-        [SerializeField] GlobalEvent PurchaseEvent;
+        [SerializeField] GlobalEventSO PurchaseEvent;
+        ParticleSystem ps;
         SpriteRenderer spriteRenderer;
         bool purchased = false;
         private void Awake()
@@ -22,7 +20,13 @@ namespace BunnyHouse.UI
             spriteRenderer = GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = Item.PrePurchase;
             PurchaseEvent.AddListener(purchaseEventListener);
-            purchaseEventListener();
+
+            ps = GetComponent<ParticleSystem>();
+        }
+
+        private void Start()
+        {
+            RefreshDisplay();
         }
 
         private void Update()
@@ -31,9 +35,9 @@ namespace BunnyHouse.UI
             {
                 if (Item.ResourceDependance != null)
                 {
-                    int index = Mathf.FloorToInt(Mathf.Clamp01(Item.ResourceDependance.Get()) / 0.95f);
+                    int index = Mathf.RoundToInt(Mathf.Clamp01(Item.ResourceDependance.Get()) * (Item.PostPurchase.Length -1 ));
                     spriteRenderer.sprite = Item.PostPurchase[index];
-                    Debug.Log($"{Item.ResourceDependance.ID} {Item.ResourceDependance.Get()}");
+                    //Debug.Log($"{Item.ResourceDependance.ID} {Item.ResourceDependance.Get()}");
                 }
             }
         }
@@ -43,7 +47,23 @@ namespace BunnyHouse.UI
             PurchaseEvent.RemoveListener(purchaseEventListener);
         }
 
-        private void purchaseEventListener()
+        /// <summary>
+        /// Update visuals on purchasing this item
+        /// </summary>
+        /// <param name="so"></param>
+        private void purchaseEventListener(ScriptableObject so)
+        {
+            if (so == Item)
+            {
+                FocusThis();
+            }
+            RefreshDisplay();
+        }
+
+        /// <summary>
+        /// Refresh sprite on purchase
+        /// </summary>
+        private void RefreshDisplay()
         {
             if (DataSystem.GameData.Player.UpgradedItems.Contains(Item.ID))
             {
@@ -55,6 +75,9 @@ namespace BunnyHouse.UI
             }
         }
 
+        /// <summary>
+        /// Opens description modal
+        /// </summary>
         public void OpenDesc()
         {
             if (purchased)
@@ -63,15 +86,21 @@ namespace BunnyHouse.UI
             }
         }
 
-        private void OnMouseDown()
+        private void OnMouseUpAsButton()
         {
-            if (!Singleton.isUIOverride)
+            if (!Singleton.isUIOverride())
             {
                 if (Item != null)
                 {
                     OpenDesc();
                 }
             }
+        }
+
+        private void FocusThis()
+        {
+            CameraScript.FocusOn(transform);
+            ps.Play();
         }
     }
 }

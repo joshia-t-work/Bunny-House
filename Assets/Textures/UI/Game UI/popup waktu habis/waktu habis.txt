@@ -1,0 +1,1 @@
+coba lagi mengurangi 10 stamina jika stamina habis maka akan otomatis kembali ke home

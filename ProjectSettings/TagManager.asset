@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - HouseItem
   - Water
   - UI
-  - 
-  - 
+  - SearchItem
+  - HouseBG
   - 
   - 
   - 

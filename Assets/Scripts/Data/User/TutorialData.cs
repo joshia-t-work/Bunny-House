@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace BunnyHouse.Data
 {
+    /// <summary>
+    /// Represents tutorial-related data
+    /// </summary>
     [Serializable]
     public class TutorialData : IData
     {
@@ -14,6 +17,12 @@ namespace BunnyHouse.Data
         public bool BeliBarang { get { return beliBarang; } }
         [SerializeField]
         private bool beliBarang;
+        public bool Dock { get { return dock; } }
+        [SerializeField]
+        private bool dock;
+        public bool Hint { get { return hint; } }
+        [SerializeField]
+        private bool hint;
 
         public TutorialData()
         {
@@ -30,6 +39,14 @@ namespace BunnyHouse.Data
         public void FinishBeliBarang()
         {
             beliBarang = true;
+        }
+        public void FinishDock()
+        {
+            dock = true;
+        }
+        public void FinishHint()
+        {
+            hint = true;
         }
     }
 }

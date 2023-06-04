@@ -8,6 +8,9 @@ using UnityEngine.Events;
 
 namespace BunnyHouse.UI
 {
+    /// <summary>
+    /// Represents an input UI popup
+    /// </summary>
     public class UIPopup : MonoBehaviour
     {
         [SerializeField]
@@ -18,15 +21,20 @@ namespace BunnyHouse.UI
 
         private string curVal;
 
+        /// <remarks>For UI calls</remarks>
         public void OnChangeText(string text)
         {
             curVal = text;
         }
+        /// <remarks>For UI calls</remarks>
         public void Submit()
         {
             TaskSystem.Main.Run(() => gameObject.SetActive(false));
             OnPromptSubmit.TrySetResult(curVal);
         }
+        /// <summary>
+        /// Shows the prompt, awaits for user input and returns a string after the input is submitted
+        /// </summary>
         public Task<string> ShowPrompt(string text)
         {
             curVal = "";

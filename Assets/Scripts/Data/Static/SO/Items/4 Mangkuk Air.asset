@@ -21,9 +21,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b7e400121b6b14e4c932b263b115f5bf, type: 3}
   ResourceDependance: {fileID: 11400000, guid: aa80df3d92953fb41945767154448095, type: 2}
   ResourceAddValue: 0
-  Desc: Jumlah air yang diminum oleh kelinci adalah 50-150 ml per kilo dari berat
-    badan kelinci.
-  DescObjects:
-  - {fileID: 5878595140390693264, guid: fc655c09732b3d547a25f63c99e2885b, type: 3}
-  - {fileID: 6498395509725407920, guid: 6f29cdfe47cd35c4db7139150255bfdb, type: 3}
+  Generic: {fileID: 5878595140390693264, guid: fc655c09732b3d547a25f63c99e2885b, type: 3}
+  Objects:
+  - Object: {fileID: 0}
+    Desc: Jumlah air yang diminum oleh kelinci adalah 50-150 ml per kilo dari berat
+      badan kelinci.
+    Image: {fileID: 21300000, guid: ce720ec55386d5c4da7a2720a84a811b, type: 3}
+  - Object: {fileID: 3158977638504031962, guid: 0a9fc2452569d144bb1e82a047942155, type: 3}
+    Desc: 
+    Image: {fileID: 0}
   ID: 34b5cf12-6517-4c7b-87c1-82eab32724c0

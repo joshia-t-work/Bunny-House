@@ -6,6 +6,9 @@ using System.Threading;
 
 namespace BunnyHouse.Core
 {
+    /// <summary>
+    /// Encapsulation of TaskSystem to create potentially safer tasks that are within Unity environment
+    /// </summary>
     public class TaskSystem : MonoSingleton
     {
         static CancellationTokenSource Abort = new CancellationTokenSource();

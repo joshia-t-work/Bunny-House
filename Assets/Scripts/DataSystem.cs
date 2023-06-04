@@ -5,6 +5,9 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace BunnyHouse.Core
 {
+    /// <summary>
+    /// Handles saving and loading.
+    /// </summary>
     public class DataSystem : MonoSingleton
     {
         private const string FOLDER_DATA_PATH = "/Saves/";
@@ -25,10 +28,16 @@ namespace BunnyHouse.Core
             }
         }
 
+        /// <summary>
+        /// Passes OnPause to data classes
+        /// </summary>
         public override void MonoOnApplicationPause()
         {
             GameData.OnPause();
         }
+        /// <summary>
+        /// Resets game data and loads main menu
+        /// </summary>
         public static void NewGame()
         {
             GameData = new GameData();
@@ -36,13 +45,18 @@ namespace BunnyHouse.Core
             SaveGame();
             SceneSystem.LoadScene(0);
         }
-
+        /// <summary>
+        /// Saves the game
+        /// </summary>
+        /// <remarks>Invokes OnPause on data classes</remarks>
         public static void SaveGame()
         {
             GameData.OnPause();
             SaveGameData(GameData);
         }
-
+        /// <summary>
+        /// Saves only settings data class
+        /// </summary>
         public static void SaveSettings()
         {
             SaveGameData(SettingData);

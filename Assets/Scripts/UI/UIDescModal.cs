@@ -11,6 +11,9 @@ using UnityEngine.UI;
 
 namespace BunnyHouse.UI
 {
+    /// <summary>
+    /// Represents a Desciption Modal
+    /// </summary>
     public class UIDescModal : MonoBehaviour
     {
         public static UIDescModal Instance { get; private set; }
@@ -29,7 +32,7 @@ namespace BunnyHouse.UI
 
         private GameObject prevDisplayed = null;
         private HouseItem currentItem;
-        private List<GameObject> currentItemObjects = new List<GameObject>();
+        private List<GameObject> currentItemDescObjects = new List<GameObject>();
         private int selectedIndex;
 
         private Dictionary<HouseItem, List<GameObject>> items = new Dictionary<HouseItem, List<GameObject>>();
@@ -37,18 +40,21 @@ namespace BunnyHouse.UI
         public void Initialize()
         {
             Instance = this;
+        }
+        private void OnEnable()
+        {
             UIEventClose.AddListener(CloseListener);
         }
-        private void OnDestroy()
+        private void OnDisable()
         {
             UIEventClose.RemoveListener(CloseListener);
         }
 
         private void CloseListener()
         {
-            for (int i = 0; i < currentItemObjects.Count; i++)
+            for (int i = 0; i < currentItemDescObjects.Count; i++)
             {
-                currentItemObjects[i].SetActive(false);
+                currentItemDescObjects[i].SetActive(false);
             }
             gameObject.SetActive(false);
         }
@@ -59,20 +65,27 @@ namespace BunnyHouse.UI
             gameObject.SetActive(true);
             if (items.ContainsKey(item))
             {
-                currentItemObjects = items[item];
+                currentItemDescObjects = items[item];
             } else
             {
-                currentItemObjects = new List<GameObject>();
-                items.Add(item, currentItemObjects);
-                for (int i = 0; i < currentItem.DescObjects.Count; i++)
+                currentItemDescObjects = new List<GameObject>();
+                items.Add(item, currentItemDescObjects);
+                for (int i = 0; i < currentItem.Objects.Count; i++)
                 {
-                    GameObject go = Instantiate(currentItem.DescObjects[i], DescParent.transform);
-                    UIGenericDesc ui = go.GetComponent<UIGenericDesc>();
-                    if (ui != null)
+                    GameObject go;
+                    if (currentItem.Objects[i].Object == null)
                     {
-                        ui.SetData(currentItem);
+                        go = Instantiate(currentItem.Generic, DescParent.transform);
+                        UIGenericDesc ui = go.GetComponent<UIGenericDesc>();
+                        if (ui != null)
+                        {
+                            ui.SetData(currentItem.Objects[i]);
+                        }
+                    } else
+                    {
+                        go = Instantiate(currentItem.Objects[i].Object, DescParent.transform);
                     }
-                    currentItemObjects.Add(go);
+                    currentItemDescObjects.Add(go);
                 }
             }
             selectedIndex = 0;
@@ -91,14 +104,17 @@ namespace BunnyHouse.UI
             UpdateDisplay();
         }
 
+        /// <summary>
+        /// Deactivates last window and activates new window based on index
+        /// </summary>
         public void UpdateDisplay()
         {
             if (prevDisplayed != null)
             {
                 prevDisplayed.SetActive(false);
             }
-            prevDisplayed = currentItemObjects[selectedIndex];
-            currentItemObjects[selectedIndex].SetActive(true);
+            prevDisplayed = currentItemDescObjects[selectedIndex];
+            currentItemDescObjects[selectedIndex].SetActive(true);
             if (selectedIndex > 0)
             {
                 DescArrowLeft.SetActive(true);
@@ -106,7 +122,7 @@ namespace BunnyHouse.UI
             {
                 DescArrowLeft.SetActive(false);
             }
-            if (selectedIndex < currentItemObjects.Count - 1)
+            if (selectedIndex < currentItemDescObjects.Count - 1)
             {
                 DescArrowRight.SetActive(true);
             } else

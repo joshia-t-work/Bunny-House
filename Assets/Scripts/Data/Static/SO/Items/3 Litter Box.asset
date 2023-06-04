@@ -20,9 +20,23 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f1dc1e79c2cdba541bb01401b2ce7fde, type: 3}
   ResourceDependance: {fileID: 11400000, guid: b4500d1568f91d24eaeadd6d0d034152, type: 2}
   ResourceAddValue: 0
-  Desc: Diganti 3 hari sekali, litter box jangan terlalu sering di cuci agar kelinci
-    dapat mengidentifikasi bau dari kotorannya.
-  DescObjects:
-  - {fileID: 8166487790412247608, guid: 6945b57320582fb459fc42b688beb2cd, type: 3}
-  - {fileID: 1120063587159743401, guid: dcf321460fd66e640866d3323edde5ee, type: 3}
+  Generic: {fileID: 5878595140390693264, guid: fc655c09732b3d547a25f63c99e2885b, type: 3}
+  Objects:
+  - Object: {fileID: 8166487790412247608, guid: 6945b57320582fb459fc42b688beb2cd, type: 3}
+    Desc: 
+    Image: {fileID: 0}
+  - Object: {fileID: 0}
+    Desc: Lapisan koran untuk menyerap sisa cairan dan mempermudah membersihkan litter
+      box
+    Image: {fileID: 21300000, guid: 8f13dec5f9bff194498c43d22fa36ded, type: 3}
+  - Object: {fileID: 0}
+    Desc: Wood pellet, atau serbuk kayu untuk menyerap cairan dan urin kelinci
+    Image: {fileID: 21300000, guid: b59bd7ea380b2b1479cbcde7f73a4da0, type: 3}
+  - Object: {fileID: 0}
+    Desc: 'Rumput untuk menarik perhatian kelinci dan mempermudah kelinci untuk buang
+      air besar '
+    Image: {fileID: 21300000, guid: 5f5698bbfd538164885571259a10bc4f, type: 3}
+  - Object: {fileID: 1236578170661299867, guid: d1a20b8cdff78784da3a7d192fea5fb9, type: 3}
+    Desc: 
+    Image: {fileID: 0}
   ID: 00703ee5-bc94-4310-8f5f-6c07a2c3a158

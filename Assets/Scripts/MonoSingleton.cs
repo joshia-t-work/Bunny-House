@@ -4,7 +4,9 @@ using UnityEngine;
 
 namespace BunnyHouse.Core
 {
-
+    /// <summary>
+    /// Singleton base class, used to differentiate scripts located in the main singleton
+    /// </summary>
     public class MonoSingleton : MonoBehaviour
     {
         public virtual void MonoAwake()
